@@ -1,0 +1,17 @@
+Users.objects.create(first_name = "Ashley", last_name = "D'Allessandro", email = "ashely@ashley.com", age = 37)
+Users.objects.create(first_name = "Olivia", last_name = "D'Allessandro", email = "olivia@ashley.com", age = 4.5)
+Users.objects.create(first_name = "Moxxi", last_name = "Darling", email = "moxxi@brynn.com", age = 5)
+
+Users.objects.all()
+Users.objects.last()
+Users.objects.first()
+
+Users.objects.get(id=3)
+Users.objects.get(id=1)
+
+user_to_update= Users.objects.get(id=3)
+user_to_update.last_name= "Pancakes"
+user_to_update.save()
+user_to_update = User.objects.get(id=2).delete()
+
+Users.objects.all().order_by("-first_name")

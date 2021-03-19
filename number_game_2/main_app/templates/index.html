@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .right{
+        background-color: green;
+        height: 150px;
+        width: 150px;
+        display: inline-block;
+        margin: 10px;
+        border: black;
+        text-align: center;
+    }
+    .wrong{
+        background-color: red;
+        height: 150px;
+        width: 150px;
+        display: inline-block;
+        margin: 10px;
+        border: black;
+        text-align: center;
+    }
+
+
+</style>
+<body>
+    <p>Welcome to the Great Number Game!</p>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Come and take a guess!</p>
+
+    <form action="/replay" method="post">
+        {% csrf_token %}
+        <input type="number" name="guess" id="" min= "1" max= "100" required>
+        <br>
+        <br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+
+    {% if request.session.result == request.session.answer %}
+    <div class="right">
+    <p>Good Job! You won the game!</p>
+</div>
+    <p><a href="/clear">PLAY AGAIN!</a></p>
+    {% elif request.session.result > request.session.answer %}
+<div class="wrong">
+    <p>You guessed too high!</p>
+</div>
+    {% elif request.session.result < request.session.answer %}
+    <div class="wrong">
+    <p>You guessed too low!</p>
+    </div>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dojo Survey: (peanut butter jelly time!)</h1>
+<div id="box">
+    <form action="/result" method="post">
+        {% csrf_token %}
+        <div class="info">
+        <Label for="your_name">Your Name:</Label>
+        <Input type="text" id='your_name' name="your_name">
+        </div>
+        <br>
+        <br>
+        <Label for="dojo_location">Dojo Location:</Label>
+        <Input type="text" id='dojo_location' name="dojo_location">
+        <br>
+        <br>
+        <label for="favorite_language">Favorite Language</label>
+        <select name="favorite_language" id="favorite_language">
+            <option value="python">Python</option>
+            <option value="also_python">Also Python</option>
+            <option value="both">Both</option>
+        </select>
+        <br>
+        <br>
+        <label for="comments">Comment (optional):</label>
+        <textarea name="comments"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+        
+    </form>
+</div>
+</body>
+</html>
+
+<div class="info">
+
+
+</div>

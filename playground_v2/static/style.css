@@ -1,0 +1,16 @@
+*{
+    background-color: blue;
+    min-width: auto;
+    min-height: auto;
+}
+
+.box{
+    width: 77px;
+    height: 77px;
+    background-color: {{tempColor}};
+    display: inline-block;
+    margin: 7.7px;
+}
+
+/* SO FOR THIS KIND OF ASSIGNMENT, THE TEMP COLOR DOESN'T WORK BECAUSE YOU CANNOT USE
+THE JINJA TAGS IN CSS, THEY HAVE TO BE INLINE, AKA, STYLED IN THE HTML */
