@@ -1,0 +1,16 @@
+#box{
+    border: auto;
+    border-color: blueviolet;
+    border-style: ridge;
+    background-color: cornsilk;
+    height: auto;
+    width: 500px;
+}
+#new{
+    border: auto;
+    border-color: green;
+    border-style: ridge;
+    background-color: cornsilk;
+    height: auto;
+    width: 500px;
+}

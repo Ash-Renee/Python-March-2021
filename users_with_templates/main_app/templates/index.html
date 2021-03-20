@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>The Good Place</title>
+</head>
+<body>
+    <p>All the Users</p>
+    <div id="box">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in all_user %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.age}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="new">
+    <form action="/add_user" method="post">
+        {% csrf_token %}
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+    <br>
+    <br>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email">
+    <br>
+    <br>
+    <label for="age">Age</label>
+    <input type="text" id="age" name="age">
+    <br>
+    <br>
+    <button type="submit">Add New User</button>
+    </form>
+</div>
+
+</html>
