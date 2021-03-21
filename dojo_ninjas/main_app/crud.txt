@@ -1,0 +1,23 @@
+from main_app.models import *
+
+Dojo.objects.create(name="Warlock", city="Venus", state="Sol")
+Dojo.objects.create(name="Titan", city="The Farm", state="EDZ")
+Dojo.objects.create(name="Hunter", city="Forest", state="Io")
+
+Dojo_to_update = Dojos.objects.get(id=1).delete()
+
+Dojo.objects.create(name="Warlock", city="Venus", state="Sol")
+
+Dojo.objects.get(id=4)
+void = Dojo.objects.get(id=4)  //void is the variable name for dojo 4, warlock
+void.ninjas.all()  //ninjas is the related name, hence it instead of objects.
+
+sentinel = Dojo.objects.get(id=2)
+
+gunslinger = Dojo.objects.get(id=3)
+
+
+
+Ninjas.objects.create(dojo= INSERT VARIABLE NAME HERE,first_name="Ikora", last_name="Rey")
+
+DOJOVARIABLE.objects.all() //to see all the students
